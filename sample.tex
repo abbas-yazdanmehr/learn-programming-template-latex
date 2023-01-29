@@ -1,0 +1,60 @@
+\documentclass[a4paper]{article}
+
+%%% usepackage %%%
+\usepackage{yyylp}
+% \usepackage[margin=2cm]{geometry}
+
+
+% ---------------------------------------------------------
+\begin{document}
+
+\mtitle
+
+\newpage
+
+\mheader{\today}{Header side}
+This is under header start text.
+
+\begin{boxK}
+    This is boxK.
+\end{boxK}
+
+\begin{boxF}
+    This is boxF.
+\end{boxF}
+
+\begin{boxJ}
+    This is boxJ.
+\end{boxJ}
+
+Write code here:
+\begin{lstlisting}[language=Python]
+for i in range(20):
+    print(i)
+
+# this is python code
+a = 199
+
+if i == 20:
+    while True:
+        break
+    else:
+        print(False)
+\end{lstlisting}
+
+Insert logo in your document:
+\begin{center}
+    \includegraphics[width=3cm]{constants/github.png}
+\end{center}
+
+\newpage
+Insert photo in your document:
+\begin{center}
+    \includegraphics[width=5cm]{figures/atom.png}
+\end{center}
+
+Insert code from file in your document:
+\mcodeinput{Python}{code/free.py}
+
+\mgoodbye
+\end{document}

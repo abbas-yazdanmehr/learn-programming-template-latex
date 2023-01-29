@@ -1,0 +1,6 @@
+python use_template.py
+Author Name
+Author Email
+Technology Subject
+pdflatex sample
+sample.pdf

@@ -1,0 +1,113 @@
+% --------------------------------------------------------------------------
+% YYY-LP latex style(template)
+% Author: Abbas Yazdanmehr
+% Last Update: 1401_11_9 (2023_1_29)
+% ** use, develop, comment and share this
+% ---------------------------------------------------------------------------
+
+
+%%% requirepackage
+\RequirePackage[many]{tcolorbox} 
+\RequirePackage{latexsym,amsmath,amssymb}
+\RequirePackage{listings}
+
+%%% definecolors %%%
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{main}{HTML}{5989cf}    % setting main color to be used
+\definecolor{sub}{HTML}{cde4ff}     % setting sub color to be used
+
+%%% package settings %%%
+\lstset{
+    backgroundcolor=\color{backcolour},
+    frame=tblr,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3
+}
+
+
+\tcbset{
+    sharp corners,
+    colback = white,
+    before skip = 0.2cm,    % add extra space before the box
+    after skip = 0.5cm      % add extra space after the box
+}                           % setting global options for tcolorbox
+
+%%% newenvironments
+\newtcolorbox{boxF}{
+    colback = sub,
+    enhanced,
+    boxrule = 1.5pt, 
+    colframe = white, % making the base for dash line
+    borderline = {1.5pt}{0pt}{main, dashed} % add "dashed" for dashed line
+}
+
+\newtcolorbox{boxJ}{
+    sharpish corners, % better drop shadow
+    colback = sub, 
+    colframe = main, 
+    boxrule = 0pt, 
+    toprule = 4.5pt, % top rule weight
+    enhanced,
+    fuzzy shadow = {0pt}{-2pt}{-0.5pt}{0.5pt}{black!35} % {xshift}{yshift}{offset}{step}{options} 
+}
+
+\newtcolorbox{boxK}{
+    sharpish corners, % better drop shadow
+    boxrule = 0pt,
+    toprule = 4.5pt, % top rule weight
+    enhanced,
+    fuzzy shadow = {0pt}{-2pt}{-0.5pt}{0.5pt}{black!35} % {xshift}{yshift}{offset}{step}{options} 
+}
+
+%%% newcommand %%%
+\newcommand{\tauthor}{yyyauthor}
+\newcommand{\tauthoremail}{yyyemail}
+\newcommand{\tsubject}{yyysubject}
+\newcommand{\mtitle}{
+    \begin{center}
+        .
+    \end{center}
+    \addvspace{3.5cm}
+    \hrule
+    \bigskip
+    \begin{center} 
+        {\Huge \tsubject} \\
+        \bigskip
+        {\tauthor} \\
+        \smallskip
+        {\tauthoremail} \\
+        \smallskip
+        \today
+    \end{center}
+    \hrule
+}
+
+\newcommand{\mheader}[2]{
+    \noindent
+    #1 \hfill #2 \\
+    \smallskip
+    \hrule
+    \bigskip
+}
+
+\newcommand{\mgoodbye}{
+    \addvspace{2cm}
+    \noindent
+    \rule{4cm}{1pt} \hfill End Of Document \hfill \rule{4cm}{1pt}
+}
+
+\newcommand{\mcodeinput}[2]{\noindent \lstinputlisting[firstline=0, lastline=100,language=#1, caption=#2, captionpos=b]{#2}}
